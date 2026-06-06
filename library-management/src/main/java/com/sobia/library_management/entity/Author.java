@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name="authors")
 @Data
@@ -15,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column (nullable = false)
     private String firstName;
@@ -27,7 +29,7 @@ public class Author {
     private String email;
 
     // link to books
-    //@OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
-    //private List<Book> books;
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+    private List<Book> books;
 
 }
