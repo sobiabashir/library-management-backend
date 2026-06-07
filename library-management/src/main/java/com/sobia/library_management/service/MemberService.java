@@ -27,6 +27,8 @@ public class MemberService {
                 .orElseThrow(() -> new RuntimeException("Member not found with id: " + id));
         return convertToDTO(member);
     }
+    @Autowired
+    private org.springframework.security.crypto.password.PasswordEncoder passwordEncoder;
 
     public MemberResponseDTO createMember(MemberRequestDTO requestDTO) {
         Member member = new Member();
@@ -36,6 +38,8 @@ public class MemberService {
         member.setPhone(requestDTO.getPhone());
         member.setMembershipDate(requestDTO.getMembershipDate());
         member.setRole(requestDTO.getRole());
+        // Encode password before saving
+        member.setPassword(passwordEncoder.encode(requestDTO.getPassword()));
         Member saved = memberRepository.save(member);
         return convertToDTO(saved);
     }
