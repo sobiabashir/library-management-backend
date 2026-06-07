@@ -1,3 +1,10 @@
+ALTER TABLE authors ALTER COLUMN id RESTART WITH 10;
+ALTER TABLE categories ALTER COLUMN id RESTART WITH 10;
+ALTER TABLE books ALTER COLUMN id RESTART WITH 10;
+ALTER TABLE members ALTER COLUMN id RESTART WITH 10;
+ALTER TABLE borrowing_records ALTER COLUMN id RESTART WITH 10;
+
+
 -- Categories
 INSERT INTO categories (id, name) VALUES (1, 'Fiction');
 INSERT INTO categories (id, name) VALUES (2, 'Science');
