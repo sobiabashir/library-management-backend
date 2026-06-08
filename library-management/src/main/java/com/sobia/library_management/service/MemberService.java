@@ -5,10 +5,10 @@ import com.sobia.library_management.dto.response.MemberResponseDTO;
 import com.sobia.library_management.entity.Member;
 import com.sobia.library_management.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
-
 @Service
 public class MemberService {
 
@@ -28,7 +28,10 @@ public class MemberService {
         return convertToDTO(member);
     }
     @Autowired
-    private org.springframework.security.crypto.password.PasswordEncoder passwordEncoder;
+    private EmailService emailService;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public MemberResponseDTO createMember(MemberRequestDTO requestDTO) {
         Member member = new Member();
@@ -38,9 +41,16 @@ public class MemberService {
         member.setPhone(requestDTO.getPhone());
         member.setMembershipDate(requestDTO.getMembershipDate());
         member.setRole(requestDTO.getRole());
-        // Encode password before saving
         member.setPassword(passwordEncoder.encode(requestDTO.getPassword()));
         Member saved = memberRepository.save(member);
+
+        // Send welcome email
+        emailService.sendWelcomeEmail(
+                saved.getEmail(),
+                saved.getFirstName(),
+                requestDTO.getPassword()
+        );
+
         return convertToDTO(saved);
     }
 

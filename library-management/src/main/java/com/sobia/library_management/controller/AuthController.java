@@ -1,10 +1,13 @@
 package com.sobia.library_management.controller;
 
+import com.sobia.library_management.dto.request.ForgotPasswordRequestDTO;
 import com.sobia.library_management.dto.request.LoginRequestDTO;
+import com.sobia.library_management.dto.request.ResetPasswordRequestDTO;
 import com.sobia.library_management.dto.response.LoginResponseDTO;
 import com.sobia.library_management.entity.Member;
 import com.sobia.library_management.repository.MemberRepository;
 import com.sobia.library_management.security.JwtUtil;
+import com.sobia.library_management.service.PasswordResetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +33,29 @@ public class AuthController {
     ///  temporary
     @Autowired
     private org.springframework.security.crypto.password.PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private PasswordResetService passwordResetService;
+
+    @PostMapping("/forgot-password")
+    public ResponseEntity<?> forgotPassword(@RequestBody ForgotPasswordRequestDTO request) {
+        try {
+            passwordResetService.requestPasswordReset(request.getEmail());
+            return ResponseEntity.ok("Password reset email sent successfully");
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+    }
+
+    @PostMapping("/reset-password")
+    public ResponseEntity<?> resetPassword(@RequestBody ResetPasswordRequestDTO request) {
+        try {
+            passwordResetService.resetPassword(request.getToken(), request.getNewPassword());
+            return ResponseEntity.ok("Password reset successfully");
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
 
     @GetMapping("/encode/{password}")
     public String encodePassword(@PathVariable String password) {
