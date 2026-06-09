@@ -1,5 +1,3 @@
--- Categories
--- Categories
 INSERT IGNORE INTO categories (id, name) VALUES (1, 'Fiction');
 INSERT IGNORE INTO categories (id, name) VALUES (2, 'Science');
 INSERT IGNORE INTO categories (id, name) VALUES (3, 'History');
@@ -11,8 +9,6 @@ INSERT IGNORE INTO categories (id, name) VALUES (8, 'Psychology');
 INSERT IGNORE INTO categories (id, name) VALUES (9, 'Business');
 INSERT IGNORE INTO categories (id, name) VALUES (10, 'Science Fiction');
 
-
--- Authors
 INSERT IGNORE INTO authors (id, first_name, last_name, email) VALUES (1, 'George', 'Orwell', 'george@example.com');
 INSERT IGNORE INTO authors (id, first_name, last_name, email) VALUES (2, 'Stephen', 'Hawking', 'stephen@example.com');
 INSERT IGNORE INTO authors (id, first_name, last_name, email) VALUES (3, 'Yuval', 'Harari', 'yuval@example.com');
@@ -26,12 +22,12 @@ INSERT IGNORE INTO authors (id, first_name, last_name, email) VALUES (10, 'Rober
 INSERT IGNORE INTO authors (id, first_name, last_name, email) VALUES (11, 'Viktor', 'Frankl', 'viktor@example.com');
 INSERT IGNORE INTO authors (id, first_name, last_name, email) VALUES (12, 'Fyodor', 'Dostoevsky', 'fyodor@example.com');
 
--- Books
+
 INSERT IGNORE INTO books (id, title, isbn, published_year, available_copies, author_id, category_id) VALUES (1, '1984', '978-0451524935', 1949, 5, 1, 1);
 INSERT IGNORE INTO books (id, title, isbn, published_year, available_copies, author_id, category_id) VALUES (2, 'Animal Farm', '978-0451526342', 1945, 3, 1, 1);
 INSERT IGNORE INTO books (id, title, isbn, published_year, available_copies, author_id, category_id) VALUES (3, 'A Brief History of Time', '978-0553380163', 1988, 4, 2, 2);
 INSERT IGNORE INTO books (id, title, isbn, published_year, available_copies, author_id, category_id) VALUES (4, 'Sapiens', '978-0062316097', 2011, 6, 3, 3);
-INSERT IGNORE INTO books (id, title, isbn, published_year, available_copies, author_id, category_id) VALUES (5, 'How to Win Friends and Influence People', '978-0671027032', 1936, 4, 4, 6);
+INSERT IGNORE INTO books (id, title, isbn, published_year, available_copies, author_id, category_id) VALUES (5, 'How to Win Friends', '978-0671027032', 1936, 4, 4, 6);
 INSERT IGNORE INTO books (id, title, isbn, published_year, available_copies, author_id, category_id) VALUES (6, 'Steve Jobs', '978-1451648539', 2011, 3, 5, 5);
 INSERT IGNORE INTO books (id, title, isbn, published_year, available_copies, author_id, category_id) VALUES (7, 'The Alchemist', '978-0062315007', 1988, 5, 6, 1);
 INSERT IGNORE INTO books (id, title, isbn, published_year, available_copies, author_id, category_id) VALUES (8, 'Outliers', '978-0316017930', 2008, 4, 7, 8);
@@ -46,29 +42,15 @@ INSERT IGNORE INTO books (id, title, isbn, published_year, available_copies, aut
 INSERT IGNORE INTO books (id, title, isbn, published_year, available_copies, author_id, category_id) VALUES (17, 'The Grand Design', '978-0553384666', 2010, 2, 2, 2);
 INSERT IGNORE INTO books (id, title, isbn, published_year, available_copies, author_id, category_id) VALUES (18, 'Crime and Punishment', '978-0486415871', 1866, 3, 12, 1);
 
--- Members
--- Members
-INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password)
-VALUES (1, 'Sobia', 'Bashir', 'sobiaasim2017@gmail.com', '0739818941', '2024-01-01', 'ADMIN',
+INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password) VALUES (1, 'Sobia', 'Bashir', 'sobiaasim2017@gmail.com', '0739818941', '2024-01-01', 'ADMIN',
 '$2a$10$j1ntGgyVq9fxYbnF0L2uh.aiBAKtcWW.Svnz6wCNuDag.41XyBkUe');
+INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password) VALUES (2, 'Ali', 'Ahmed', 'sobiabashir_786@hotmail.com', '0700111222', '2024-02-01', 'MEMBER', '$2a$10$8K1p/a0dR1xqMt0Z/Q5H6.eFnbV4rKJfcm0G5xPSJm3jt4qHMm7eK');
+INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password) VALUES (3, 'Sara', 'Malik', 'saimashokat094@gmail.com', '0700333444', '2024-03-01', 'MEMBER', '$2a$10$8K1p/a0dR1xqMt0Z/Q5H6.eFnbV4rKJfcm0G5xPSJm3jt4qHMm7eK');
+INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password) VALUES (4, 'Ahmed', 'Khan', 'ahmed@example.com', '0700555666', '2024-04-01', 'MEMBER', '$2a$10$8K1p/a0dR1xqMt0Z/Q5H6.eFnbV4rKJfcm0G5xPSJm3jt4qHMm7eK');
+INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password) VALUES (5, 'Fatima', 'Zahra', 'fatima@example.com', '0700777888', '2024-05-01', 'MEMBER', '$2a$10$8K1p/a0dR1xqMt0Z/Q5H6.eFnbV4rKJfcm0G5xPSJm3jt4qHMm7eK');
 
-INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password)
-VALUES (2, 'Ali', 'Ahmed', 'sobiabashir_786@hotmail.com', '0700111222', '2024-02-01', 'MEMBER',
-'$2a$10$8K1p/a0dR1xqMt0Z/Q5H6.eFnbV4rKJfcm0G5xPSJm3jt4qHMm7eK');
 
-INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password)
-VALUES (3, 'Sara', 'Malik', 'saimashokat094@gmail.com', '0700333444', '2024-03-01', 'MEMBER',
-'$2a$10$8K1p/a0dR1xqMt0Z/Q5H6.eFnbV4rKJfcm0G5xPSJm3jt4qHMm7eK');
 
-INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password)
-VALUES (4, 'Ahmed', 'Khan', 'ahmed@example.com', '0700555666', '2024-04-01', 'MEMBER',
-'$2a$10$8K1p/a0dR1xqMt0Z/Q5H6.eFnbV4rKJfcm0G5xPSJm3jt4qHMm7eK');
-
-INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password)
-VALUES (5, 'Fatima', 'Zahra', 'fatima@example.com', '0700777888', '2024-05-01', 'MEMBER',
-'$2a$10$8K1p/a0dR1xqMt0Z/Q5H6.eFnbV4rKJfcm0G5xPSJm3jt4qHMm7eK');
-
--- Borrowing Records
 INSERT IGNORE INTO borrowing_records (id, borrow_date, return_date, status, book_id, member_id) VALUES (1, '2024-05-01', '2024-05-15', 'RETURNED', 1, 2);
 INSERT IGNORE INTO borrowing_records (id, borrow_date, return_date, status, book_id, member_id) VALUES (2, '2024-06-01', '2024-06-20', 'RETURNED', 3, 3);
 INSERT IGNORE INTO borrowing_records (id, borrow_date, return_date, status, book_id, member_id) VALUES (3, '2024-06-03', null, 'BORROWED', 4, 2);
