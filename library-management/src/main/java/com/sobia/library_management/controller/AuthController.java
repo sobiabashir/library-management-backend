@@ -57,10 +57,7 @@ public class AuthController {
         }
     }
 
-    @GetMapping("/encode/{password}")
-    public String encodePassword(@PathVariable String password) {
-        return passwordEncoder.encode(password);
-    }
+
     ///
 
     @PostMapping("/login")
