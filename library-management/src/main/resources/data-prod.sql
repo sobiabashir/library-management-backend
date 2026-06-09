@@ -43,11 +43,11 @@ INSERT IGNORE INTO books (id, title, isbn, published_year, available_copies, aut
 INSERT IGNORE INTO books (id, title, isbn, published_year, available_copies, author_id, category_id) VALUES (18, 'Crime and Punishment', '978-0486415871', 1866, 3, 12, 1);
 
 INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password) VALUES (1, 'Sobia', 'Bashir', 'sobiaasim2017@gmail.com', '0739818941', '2024-01-01', 'ADMIN',
-'$2a$10$j1ntGgyVq9fxYbnF0L2uh.aiBAKtcWW.Svnz6wCNuDag.41XyBkUe');
-INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password) VALUES (2, 'Ali', 'Ahmed', 'sobiabashir_786@hotmail.com', '0700111222', '2024-02-01', 'MEMBER', '$2a$10$8K1p/a0dR1xqMt0Z/Q5H6.eFnbV4rKJfcm0G5xPSJm3jt4qHMm7eK');
-INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password) VALUES (3, 'Sara', 'Malik', 'saimashokat094@gmail.com', '0700333444', '2024-03-01', 'MEMBER', '$2a$10$8K1p/a0dR1xqMt0Z/Q5H6.eFnbV4rKJfcm0G5xPSJm3jt4qHMm7eK');
-INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password) VALUES (4, 'Ahmed', 'Khan', 'ahmed@example.com', '0700555666', '2024-04-01', 'MEMBER', '$2a$10$8K1p/a0dR1xqMt0Z/Q5H6.eFnbV4rKJfcm0G5xPSJm3jt4qHMm7eK');
-INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password) VALUES (5, 'Fatima', 'Zahra', 'fatima@example.com', '0700777888', '2024-05-01', 'MEMBER', '$2a$10$8K1p/a0dR1xqMt0Z/Q5H6.eFnbV4rKJfcm0G5xPSJm3jt4qHMm7eK');
+'$2a$10$PYWo8hJ/omneF2G9ankOzuIg0B.zAuMY4TjtXtSjoscZ2xFpkLRhe');
+INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password) VALUES (2, 'Ali', 'Ahmed', 'sobiabashir_786@hotmail.com', '0700111222', '2024-02-01', 'MEMBER', '$2a$10$/QbhNRnCjs/Qi5i.VBn50uzqgxg0/ehebH7Nwjyiw2AWUxE09.QHO');
+INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password) VALUES (3, 'Sara', 'Malik', 'saimashokat094@gmail.com', '0700333444', '2024-03-01', 'MEMBER', '$2a$10$/QbhNRnCjs/Qi5i.VBn50uzqgxg0/ehebH7Nwjyiw2AWUxE09.QHO');
+INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password) VALUES (4, 'Ahmed', 'Khan', 'ahmed@example.com', '0700555666', '2024-04-01', 'MEMBER', '$2a$10$/QbhNRnCjs/Qi5i.VBn50uzqgxg0/ehebH7Nwjyiw2AWUxE09.QHO');
+INSERT IGNORE INTO members (id, first_name, last_name, email, phone, membership_date, role, password) VALUES (5, 'Fatima', 'Zahra', 'fatima@example.com', '0700777888', '2024-05-01', 'MEMBER', '$2a$10$/QbhNRnCjs/Qi5i.VBn50uzqgxg0/ehebH7Nwjyiw2AWUxE09.QHO');
 
 
 
