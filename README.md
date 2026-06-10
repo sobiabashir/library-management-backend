@@ -2,15 +2,21 @@
 
 A secure full stack REST API built with Java and Spring Boot, featuring JWT authentication, role-based access control and email integration.
 
+## 🌐 Live Demo
+
+**Frontend:** https://library-management-frontend-git-main-sobia-s-projects.vercel.app
+
+**Backend API:** https://library-management-backend-production-61bb.up.railway.app
+
 ## 🛠 Tech Stack
 
-- Java 17
-- Spring Boot 3
+- Java 21
+- Spring Boot 3.5
 - Spring Security
 - JWT Authentication (jjwt 0.11.5)
 - BCrypt Password Encoding
 - Spring Data JPA / Hibernate
-- H2 In-Memory Database
+- MySQL (Railway production) / H2 (local development)
 - JavaMailSender (Gmail SMTP)
 - Lombok
 - Maven
@@ -27,7 +33,8 @@ A secure full stack REST API built with Java and Spring Boot, featuring JWT auth
 - DTO pattern — separate Request and Response DTOs
 - Entity relationships — OneToMany and ManyToOne
 - BCrypt password encoding
-- H2 Console for database inspection
+- H2 Console for local database inspection
+- Multi-profile configuration (local H2 / prod MySQL)
 
 ## 🔐 API Endpoints
 
@@ -73,23 +80,29 @@ src/main/java/com/sobia/library_management/
 
 | Email | Password | Role |
 |-------|----------|------|
-| sobiaasim2017@gmail.com | Sweet123 | ADMIN |
+| sobiaasim2017@gmail.com | admin123 | ADMIN |
 | sobiabashir_786@hotmail.com | member123 | MEMBER |
 
-## 🚀 How to Run
+## ☁️ Deployment
+
+- **Backend** deployed on **Railway** with MySQL database
+- **Frontend** deployed on **Vercel**
+- Multi-profile Spring Boot setup: `local` profile uses H2, `prod` profile uses Railway MySQL
+
+## 🚀 How to Run Locally
 
 1. Clone the repository
-2. git clone https://github.com/sobiabashir/library-management-backend.git
-3. 2. Open in IntelliJ IDEA
-3. Update `application.properties` with your Gmail credentials
-4. Run `LibraryManagementApplication.java`
-5. API runs on `http://localhost:8080`
-6. H2 Console at `http://localhost:8080/h2-console`
+```bash
+git clone https://github.com/sobiabashir/library-management-backend.git
+```
+2. Open in IntelliJ IDEA
+3. Run `LibraryManagementApplication.java`
+4. API runs on `http://localhost:8080`
+5. H2 Console at `http://localhost:8080/h2-console`
 
 ## 🔗 Frontend Repository
 
 [Library Management System Frontend](https://github.com/sobiabashir/library-management-frontend)
 
 ---
-
 Built by **Sobia Bashir** — Java Developer | Full Stack Engineer
