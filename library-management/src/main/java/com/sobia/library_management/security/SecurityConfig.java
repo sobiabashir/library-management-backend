@@ -3,6 +3,7 @@ package com.sobia.library_management.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -41,6 +42,7 @@ public class SecurityConfig {
                         .requestMatchers("/h2-console/**").permitAll()
                         // Admin only endpoints
                         .requestMatchers("/api/authors/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/api/categories/**").hasAnyRole("ADMIN", "MEMBER")
                         .requestMatchers("/api/categories/**").hasRole("ADMIN")
                         .requestMatchers("/api/members/**").hasRole("ADMIN")
                         // Both roles can access books and borrowing
